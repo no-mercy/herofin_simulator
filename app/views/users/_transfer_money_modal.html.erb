@@ -1,0 +1,25 @@
+<div class="modal fade" id="transferMoney" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Transfer Money</h4>
+      </div>
+      <div class="modal-body">
+        <input type="text" class="form-control transfer-description modal-input" placeholder="Description...">
+        <input type="number" value="1" min="1" max="<%= @user.account.available_money %>"
+              class="form-control transfer-amount modal-input" placeholder="Amount">
+        <%= select_tag 'target_user_id',
+            options_for_select(@money_transfer_target_users.collect{ |u| [u.name, u.id] }),
+            class: "form-control modal-input transfer-user-list"
+        %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" onclick="transferMoney(<%= @user.id %>)">Transfer</button>
+      </div>
+    </div>
+  </div>
+</div>

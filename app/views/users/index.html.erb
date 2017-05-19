@@ -1,0 +1,26 @@
+<div class="container users">
+  <h2>Users
+    <button class="btn btn-default" data-toggle="modal" data-target="#addUser">Add User</button>
+  </h2>
+  <div class="row">
+    <div class="col-md-12">
+      <table class="user-list">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Age (min)</th>
+            <th>State</th>
+            <th>Available Money</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @users.each do |user| %>
+            <%= render 'user_index_item', user: user %>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <%= render 'user_add_modal' %>
+</div>

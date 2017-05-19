@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Herofin</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Herofin</a>
+      <p class="navbar-text">Take over life with ease</p>
+    </div>
+    <div class="container">
+      <p class="navbar-text navbar-right">
+        Money in bank:
+        <%= @money_in_bank %>
+      </p>
+    </div>
+  </div>
+</nav>
+</div>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>

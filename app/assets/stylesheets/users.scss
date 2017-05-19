@@ -1,0 +1,89 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+$gray: #646e78;
+$light-gray: #f7f8f8;
+$green: #4bd24b;
+$red: #d24b4b;
+
+.users.container {
+  color: $gray;
+
+  button:focus {
+    outline: none;
+  }
+
+  .user-list {
+    width: 100%;
+    height: 100%;
+    th {
+      text-align: center;
+    }
+
+    .user-data-row {
+      height: 50px;
+
+      td {
+        text-align: center;
+      }
+
+      .dead {
+        color: $red;
+      }
+
+      .worker {
+        color: $green;
+      }
+
+      &:hover {
+        background-color: $light-gray;
+        transition: background-color .3s ease;
+      }
+    }
+  }
+}
+
+.user-page {
+  color: $gray;
+
+  button:focus {
+    outline: none;
+  }
+
+  .user-property {
+    padding: 8px 0;
+    vertical-align: middle;
+    font-size: 15px;
+    .value {
+      float: right;
+    }
+  }
+  .operations-list-section {
+    .operations-list-caption {
+      text-align: center;
+    }
+    .operations-list {
+      width: 100%;
+      height: 100%;
+      th {
+        text-align: center;
+      }
+
+      .operation-data-row {
+        height: 50px;
+
+        td {
+          text-align: center;
+        }
+
+        &:hover {
+          background-color: $light-gray;
+          transition: background-color .3s ease;
+        }
+      }
+    }
+  }
+  .modal-input {
+    margin-bottom: 10px;
+  }
+}

@@ -1,0 +1,26 @@
+<div class="container user-page">
+  <div class="row">
+  <h1><%= @user.name %></h1>
+  <%= render 'user_info' %>
+  <div class="col-md-9 operations-list-section">
+    <h4 class="operations-list-caption">Operations list</h4>
+    <table class="operations-list">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Amount</th>
+          <th>State</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @operations.each do |operation| %>
+          <%= render 'show_operation_item', operation: operation %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  </div>
+  <%= render 'kill_user_modal' %>
+  <%= render 'transfer_money_modal' %>
+</div>

@@ -1,0 +1,19 @@
+<tr class="user-data-row">
+  <td>
+    <%= user.name %>
+  </td>
+  <td>
+    <%= user.age %>
+  </td>
+  <td class="<%= user.state %>">
+    <%= user.state %>
+  </td>
+  <td>
+    <%= user.account.available_money %>
+  </td>
+  <td>
+    <%= link_to user_path(user) do %>
+      <button class="btn btn-default">details</button>
+    <% end %>
+  </td>
+</tr>

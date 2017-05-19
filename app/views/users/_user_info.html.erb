@@ -1,0 +1,26 @@
+<div class="col-md-3">
+  <h4>User Info</h4>
+  <div class="user-property">
+    Age <span class="value"><%= @user.age %> min</span>
+  </div>
+  <div class="user-property <%= @user.state %>">
+    State <span class="value"><%= @user.state %></span>
+  </div>
+  <div class="user-property">
+    Available money
+    <span class="value">
+      <%= @user.account.available_money %>
+      <% if @user.account.available_money.nonzero? && @money_transfer_target_users.any? %>
+        <button class="btn btn-default btn-sm" data-toggle="modal" data-target="#transferMoney">
+          <span class="glyphicon glyphicon-share-alt"></span>
+        </button>
+      <% end %>
+    </span>
+  </div>
+  <%= link_to root_path do %>
+    <button class="btn btn-default">Back</button>
+  <% end %>
+  <% if @user.worker? %>
+    <button class="btn btn-danger" data-toggle="modal" data-target="#killUser">Kill User</button>
+  <% end %>
+</div>
